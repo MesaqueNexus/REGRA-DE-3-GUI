@@ -1,9 +1,10 @@
 # ** conding: UTF-8 **
 # By Mesaque Nexus
+# Python 3
 
 import PySimpleGUI as sg
 
-
+# Criar um novo tema
 sg.LOOK_AND_FEEL_TABLE['Nexus'] = {'BACKGROUND': '#ADD8E6',
                                         'TEXT': '#000000',
                                         'INPUT': '#FFFFFF',
@@ -14,10 +15,10 @@ sg.LOOK_AND_FEEL_TABLE['Nexus'] = {'BACKGROUND': '#ADD8E6',
                                         'BORDER': 1, 'SLIDER_DEPTH': 0, 
 'PROGRESS_DEPTH': 0, }
 
+# Aplica o Tema Criado 
 sg.theme('Nexus')
 
-resultado = 0
-
+# Colunas do Layout
 title = [
     [sg.Text('CALCULO REGRA DE 3')]
 ]
@@ -46,6 +47,7 @@ coluna_separadores = [
     [sg.Text('-----')]
 ]
 
+# Layout Principal
 layout = [
     [sg.Column(title, vertical_alignment='center', justification='c')],
     [sg.Column(coluna_valor_01), sg.Column(coluna_separadores) ,sg.Column(coluna_valor_02)],
@@ -53,6 +55,7 @@ layout = [
     [sg.Text('©MesaqueNexus™', pad=(0, 0))]
 ]
 
+# Parte Lógica
 window = sg.Window('Regra de 3', layout)
 while True:
     event, values = window.read()
