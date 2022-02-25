@@ -1,6 +1,8 @@
-from turtle import color
+# ** conding: UTF-8 **
+# By Mesaque Nexus
+
 import PySimpleGUI as sg
-from numpy import tile
+
 
 sg.LOOK_AND_FEEL_TABLE['Nexus'] = {'BACKGROUND': '#ADD8E6',
                                         'TEXT': '#000000',
@@ -17,7 +19,7 @@ sg.theme('Nexus')
 resultado = 0
 
 title = [
-    [sg.Text('CALCULO REGRA DE 3 - TESTE')]
+    [sg.Text('CALCULO REGRA DE 3')]
 ]
 
 x = [
@@ -25,13 +27,13 @@ x = [
 ]
 
 coluna_valor_01 = [
-    [sg.Text('Valor'), sg.InputText(size=(10,5))],
+    [sg.Text('Valor'), sg.InputText(size=(10,5), key='Valor01')],
     [sg.Column(x, vertical_alignment='center', justification='c')]
 ]
 
 coluna_valor_02 = [
-    [sg.InputText(size=(10,5)), sg.Text('Valor')],
-    [sg.InputText(size=(10,5)), sg.Text('Valor')]
+    [sg.InputText(size=(10,5), key='Valor02'), sg.Text('Valor')],
+    [sg.InputText(size=(10,5), key='Valor03'), sg.Text('Valor')]
 ]
 
 coluns_ok_cancel = [
@@ -47,7 +49,8 @@ coluna_separadores = [
 layout = [
     [sg.Column(title, vertical_alignment='center', justification='c')],
     [sg.Column(coluna_valor_01), sg.Column(coluna_separadores) ,sg.Column(coluna_valor_02)],
-    [sg.Column(coluns_ok_cancel, vertical_alignment='center', justification='c')]
+    [sg.Column(coluns_ok_cancel, vertical_alignment='center', justification='c')],
+    [sg.Text('©MesaqueNexus™', pad=(0, 0))]
 ]
 
 window = sg.Window('Regra de 3', layout)
@@ -57,7 +60,8 @@ while True:
         break
     elif event == 'Calcular':
         try:
-            pass
+            calculo = (int(values['Valor01']) * int(values['Valor03'])) / int(values['Valor02'])
+            sg.popup_ok(f'Resultado:\n{calculo}')
         except ValueError:
             sg.popup_ok('Entre com valores númericos!')
 window.close()
