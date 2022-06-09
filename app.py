@@ -12,8 +12,9 @@ sg.LOOK_AND_FEEL_TABLE['Nexus'] = {'BACKGROUND': '#ADD8E6',
                                         'SCROLL': '#99CC99',
                                         'BUTTON': ('#003333', '#FFCC66'),
                                         'PROGRESS': ('#D1826B', '#CC8019'),
-                                        'BORDER': 1, 'SLIDER_DEPTH': 0, 
-'PROGRESS_DEPTH': 0, }
+                                        'BORDER': 1, 'SLIDER_DEPTH': 0,
+                                        'PROGRESS_DEPTH': 0, 
+                                    }
 
 # Aplica o Tema Criado 
 sg.theme('Nexus')
